@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 const RouletteBoard = (props) => {
   const {
+    size,
     targetIndex,
     rotateCount,
     onStart,
@@ -21,7 +22,14 @@ const RouletteBoard = (props) => {
   const rRotate = () => {
     const panel = document.getElementById("roulette-panel");
     panel.style.transition = "2s";
-    const deg = [30, 330, 270, 210, 150, 90];
+    const dividedDeg = 360 / size;
+    const gap = dividedDeg / 2;
+    let deg = [gap, 360 - gap];
+    for (let i = 2; i < size; i++) {
+      const prev = deg[i - 1];
+      const value = prev - gap * 2;
+      deg.push(value);
+    }
     let num = 0;
     aniRef.current = setInterval(() => {
       num++;
@@ -33,8 +41,6 @@ const RouletteBoard = (props) => {
         panel.style.transform = "rotate(" + deg[targetIndex] + "deg)";
         panel.style.transition = "0s";
         setTimeout(() => {
-          console.log(panel.style.transform);
-          console.log("rotate(" + deg[targetIndex] + "deg)");
           onEnd({ index: targetIndex, degree: deg[targetIndex] });
         }, 500);
       }

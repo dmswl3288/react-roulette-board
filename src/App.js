@@ -22,7 +22,8 @@ const App = () => {
 
   return (
     <RouletteBoard
-      targetIndex={0}
+      size={8}
+      targetIndex={2}
       rotateCount={30}
       onStart={false}
       onEnd={({ index, degree }) => {
@@ -30,7 +31,7 @@ const App = () => {
       }}
       width={300}
       height={300}
-      backgroundImageSrc="https://www.sonamarket.com/views/res/imgs/page/roulette/m-img-roulette.svg"
+      backgroundImageSrc="./m-img-roulette.svg"
       pinComponent={<PinComponent />}
     />
   );
