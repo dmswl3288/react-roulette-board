@@ -4,8 +4,8 @@
   "keywords": [
     "roulette"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/RouletteBoard.js",
+  "main": "dist/RouletteBoard.js",
   "dependencies": {
     "@babel/cli": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
