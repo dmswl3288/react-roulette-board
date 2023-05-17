@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = require("react");
+var _jsxRuntime = require("react/jsx-runtime");
 var RouletteBoard = function RouletteBoard(props) {
   var size = props.size,
     targetIndex = props.targetIndex,
@@ -54,35 +55,37 @@ var RouletteBoard = function RouletteBoard(props) {
     if (!onStart) return;
     startRoulette();
   }, [onStart, targetIndex]);
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     style: {
       position: "relative",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    id: "roulette-panel",
-    style: {
-      width: width,
-      height: height,
-      borderRadius: "50%",
-      transitionTimingFunction: "ease-in-out",
-      backgroundImage: "url(".concat(backgroundImageSrc, ")"),
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "absolute",
-      borderRadius: "50%",
-      cursor: "pointer",
-      background: "yellow"
     },
-    onClick: startRoulette
-  }, pinComponent));
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      id: "roulette-panel",
+      style: {
+        width: width,
+        height: height,
+        borderRadius: "50%",
+        transitionTimingFunction: "ease-in-out",
+        backgroundImage: "url(".concat(backgroundImageSrc, ")"),
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center"
+      }
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      style: {
+        position: "absolute",
+        borderRadius: "50%",
+        cursor: "pointer",
+        background: "yellow"
+      },
+      onClick: startRoulette,
+      children: pinComponent
+    })]
+  });
 };
 var _default = RouletteBoard;
 exports.default = _default;
