@@ -4,8 +4,13 @@
   "keywords": [
     "roulette"
   ],
+  "author": "dmswl3288",
   "module": "dist/index.js",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmswl3288/react-roulette-board"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-react": "^7.18.6",
