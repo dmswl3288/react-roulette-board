@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var react_2 = require("react");
 var RouletteBoard = function (props) {
-    var size = props.size, targetIndex = props.targetIndex, rotateCount = props.rotateCount, onStart = props.onStart, onEnd = props.onEnd, width = props.width, height = props.height, backgroundImageSrc = props.backgroundImageSrc, pinComponent = props.pinComponent;
+    var _a = props.size, size = _a === void 0 ? 2 : _a, _b = props.targetIndex, targetIndex = _b === void 0 ? 0 : _b, _c = props.rotateCount, rotateCount = _c === void 0 ? 30 : _c, _d = props.onStart, onStart = _d === void 0 ? false : _d, _e = props.onEnd, onEnd = _e === void 0 ? function () { } : _e, _f = props.width, width = _f === void 0 ? 300 : _f, _g = props.height, height = _g === void 0 ? 300 : _g, _h = props.backgroundImageSrc, backgroundImageSrc = _h === void 0 ? "" : _h, pinComponent = props.pinComponent;
     var aniRef = (0, react_2.useRef)();
     var startRoulette = function () {
         clearInterval(aniRef.current);
