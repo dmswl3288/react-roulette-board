@@ -1,3 +1,4 @@
+import React from "react";
 import { RouletteBoard } from "./lib";
 
 const App = () => {

@@ -1,6 +1,24 @@
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 
-const RouletteBoard = (props) => {
+interface OnEndParams {
+  index: number;
+  degree: number;
+}
+
+interface Props {
+  size: number;
+  targetIndex: number;
+  rotateCount: number;
+  onStart: boolean;
+  onEnd: ({ index, degree }: OnEndParams) => void;
+  width: number;
+  height: number;
+  backgroundImageSrc: string;
+  pinComponent: React.ReactNode;
+}
+
+const RouletteBoard = (props: Props) => {
   const {
     size,
     targetIndex,
@@ -12,7 +30,7 @@ const RouletteBoard = (props) => {
     backgroundImageSrc,
     pinComponent,
   } = props;
-  const aniRef = useRef();
+  const aniRef = useRef<ReturnType<typeof setInterval>>();
 
   const startRoulette = () => {
     clearInterval(aniRef.current);
@@ -20,7 +38,7 @@ const RouletteBoard = (props) => {
   };
 
   const rRotate = () => {
-    const panel = document.getElementById("roulette-panel");
+    const panel = document.getElementById("roulette-panel") as HTMLInputElement;
     panel.style.transition = "2s";
     const dividedDeg = 360 / size;
     const gap = dividedDeg / 2;
@@ -74,19 +92,7 @@ const RouletteBoard = (props) => {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-      >
-        {/* <div
-          style={{
-            width: 100,
-            height: 100,
-            backgroundColor: "red",
-            backgroundImage: `url(https://eppy.world/assets/images/enjoy/roulette/pin@3x.png)`,
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
-        /> */}
-      </div>
+      />
       <div
         style={{
           position: "absolute",
@@ -98,21 +104,6 @@ const RouletteBoard = (props) => {
       >
         {pinComponent}
       </div>
-      {/* <button
-        style={{
-          position: "absolute",
-          width: 100,
-          height: 100,
-          borderRadius: "50%",
-          backgroundColor: "red",
-          cursor: "pointer",
-          border: "none",
-          padding: 0,
-        }}
-        onClick={startRoulette}
-      >
-        START
-      </button> */}
     </div>
   );
 };
