@@ -9,25 +9,25 @@ interface OnEndParams {
 interface Props {
   size: number;
   targetIndex: number;
-  rotateCount: number;
+  rotateCount?: number;
   onStart: boolean;
-  onEnd: ({ index, degree }: OnEndParams) => void;
-  width: number;
-  height: number;
+  onEnd?: ({ index, degree }: OnEndParams) => void;
+  width?: number;
+  height?: number;
   backgroundImageSrc: string;
-  pinComponent: React.ReactNode;
+  pinComponent?: React.ReactNode;
 }
 
 const RouletteBoard = (props: Props) => {
   const {
-    size,
-    targetIndex,
-    rotateCount,
-    onStart,
-    onEnd,
-    width,
-    height,
-    backgroundImageSrc,
+    size = 2,
+    targetIndex = 0,
+    rotateCount = 30,
+    onStart = false,
+    onEnd = () => {},
+    width = 300,
+    height = 300,
+    backgroundImageSrc = "",
     pinComponent,
   } = props;
   const aniRef = useRef<ReturnType<typeof setInterval>>();

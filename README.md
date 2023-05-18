@@ -63,14 +63,14 @@ const App = () => {
 
 ### Props
 
-| Prop               | Default | Type                                       | Description                            |
-| ------------------ | ------- | ------------------------------------------ | -------------------------------------- |
-| size               | 2       | number                                     | The number of roulette compartment     |
-| targetIndex        | 0       | number                                     | Target Index                           |
-| rotateCount        | 30      | number                                     | The number of roulette to rotate       |
-| onStart            | false   | boolean                                    | Start to rotate                        |
-| onEnd              | -       | ({ index: number, degree: number}) => void | Executed when the roulette is finished |
-| width              | 300     | number                                     | The width of the roulette board        |
-| height             | 300     | number                                     | The height of the roulette board       |
-| backgroundImageSrc | -       | string                                     | Image to be put on the roulette board  |
-| pinComponent       | -       | node                                       | Children elements for pin              |
+| Prop               | Required | Default | Type                                       | Description                            |
+| ------------------ | -------- | ------- | ------------------------------------------ | -------------------------------------- |
+| size               | ⭕️      | 2       | number                                     | The number of roulette compartment     |
+| targetIndex        | ⭕️      | 0       | number                                     | Target Index                           |
+| rotateCount        | ❌       | 30      | number                                     | The number of roulette to rotate       |
+| onStart            | ⭕️      | false   | boolean                                    | Start to rotate                        |
+| onEnd              | ❌       | -       | ({ index: number, degree: number}) => void | Executed when the roulette is finished |
+| width              | ❌       | 300     | number                                     | The width of the roulette board        |
+| height             | ❌       | 300     | number                                     | The height of the roulette board       |
+| backgroundImageSrc | ⭕️      | ""      | string                                     | Image to be put on the roulette board  |
+| pinComponent       | ❌       | -       | node                                       | Children elements for pin              |
